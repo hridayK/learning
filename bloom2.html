@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>HAMMING</title>
+</head>
+
+<body>
+	<pre>
+
+        dataset_txt = ['orange','watermelon','apple']
+        m = int(input("Enter the size of bit array: "))
+        bitarray = [0]*m
+        
+        hash_txt1 = [hash((x,3))%m for x in dataset_txt] 
+        hash_txt2 = [hash((x,5))%m for x in dataset_txt]
+        for i in range(len(hash_txt1)):
+            print(f"hash" , hash_txt1[i])
+            bitarray[hash_txt1[i]] = 1
+        
+        for i in range(len(hash_txt2)):
+            print(f"hash" , hash_txt2[i])
+            bitarray[hash_txt2[i]] = 1
+        
+        
+        
+        
+        print(bitarray)
+        
+        # take input text
+        
+        input_txt = input("Enter the text: ")
+        input_hash1 = hash((input_txt,3))%m
+        input_hash2 = hash((input_txt,5))%m
+        print("hash of input text: ",input_hash1 , input_hash2)
+        
+        if bitarray[input_hash] == 1 and bitarray[input_hash2] == 1:
+            print("The element may be present")
+        else:
+            print("The element is not present")
+        
+
+	</pre>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAMMING</title>
+</head>
+
+<body>
+
+    <pre>
+# implementing Flajolet-Martin algorithm
+
+x = [1, 2, 3, 4, 1, 2, 3, 4, 1, 2]
+hash_arrr = []
+for i in x:
+    hash_arrr.append((6*i + 1)%5)
+print("hashed fun array ",hash_arrr)
+
+hash_bin = []
+for i in hash_arrr:
+    hash_bin.append(bin(i)[2:])
+
+print("binary array ",hash_bin)
+# find trailing zeros
+trailing_zeros = []
+for i in hash_bin:
+    trailing_zeros.append(len(i) - len(i.rstrip('0')))
+print("trailing zeros ",trailing_zeros)
+print("maximum trailing zeros ",max(trailing_zeros))
+print("number of unique elements " , (2**max(trailing_zeros)))
+    </pre>
+</body>
+
+</html>
